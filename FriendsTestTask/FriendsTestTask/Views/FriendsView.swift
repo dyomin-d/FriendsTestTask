@@ -58,7 +58,6 @@ struct FriendsView: View {
                                     .font(.title3)
                                     .foregroundColor(.gray)
                             }
-                            
                             Spacer()
                             
                             if viewModel.selectedUserId != nil {

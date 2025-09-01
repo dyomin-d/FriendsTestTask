@@ -39,14 +39,11 @@ struct FriendWithProgress: Identifiable {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         
-        // Use challenge ID + user ID for consistent randomization
         let seedString = "\(user.id)_\(userChallenge?.id ?? "default")"
         let seed = UInt64(abs(seedString.hashValue))
         
-        // Create seeded random generator
         var generator = SeededRandomNumberGenerator(seed: seed)
         
-        // Random time between 6 AM and current time (or 11 PM if current time is past that)
         let sixAM = calendar.date(byAdding: .hour, value: 6, to: today) ?? today
         let elevenPM = calendar.date(byAdding: .hour, value: 23, to: today) ?? today
         let now = Date()
