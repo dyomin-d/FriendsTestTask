@@ -1,7 +1,3 @@
-# Friends Test Task - iOS SwiftUI App
-
-A modern iOS application built with SwiftUI that displays a friends list with their challenge activities and progress tracking.
-
 ## 🎯 Features
 
 - **Friends Grid**: Horizontal scrollable list of friends with their avatars and challenge progress
