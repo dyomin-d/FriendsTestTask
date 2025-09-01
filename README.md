@@ -12,7 +12,7 @@ A modern iOS application built with SwiftUI that displays a friends list with th
 
 ## 🏗️ Architecture
 
-The app follows **MVVM+C (Model-View-ViewModel-Coordinator)** pattern:
+The app follows **MVVM+C** pattern:
 
 - **Models**: `User`, `Challenge`, `UserChallenge`, `Friendship`, `FriendWithProgress`
 - **Views**: SwiftUI views with components for modularity
@@ -22,7 +22,7 @@ The app follows **MVVM+C (Model-View-ViewModel-Coordinator)** pattern:
 
 ## 🛠️ Tech Stack
 
-- **SwiftUI** - Modern declarative UI framework
+- **SwiftUI** - UI framework
 - **Firebase Firestore** - Real-time NoSQL database
 - **Swift Concurrency** - Async/await for initial data loading
 - **Combine Framework** - Reactive programming for real-time updates
@@ -78,37 +78,10 @@ friendships/
 - **Location**: `FriendsTestTask/ViewModels/FriendsViewModel.swift:12`
 - **TODO**: Replace with actual authentication system
 
-### Activity Timestamps
-- **Randomized**: Activity times are generated using seeded randomization
-- **Range**: Between 6 AM and current time (or 11 PM if current time is later)
-- **Consistency**: Same challenge always shows the same time based on user+challenge ID
-- **Location**: `FriendWithProgress.randomTimeToday` computed property
-
 ### Task Names
 - **Randomized**: Task names are selected from a predefined list
 - **Examples**: "Morning run", "Meditation session", "Healthy breakfast", etc.
 - **Location**: `ActivityRowView.randomTaskName` computed property
-
-## 🚀 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd FriendsTestTask
-   ```
-
-2. **Open in Xcode**
-   ```bash
-   open FriendsTestTask.xcodeproj
-   ```
-
-3. **Install Dependencies**
-   - Firebase SDK is already configured in the project
-   - `GoogleService-Info.plist` is included
-
-4. **Run the app**
-   - Select a simulator or device
-   - Press `Cmd + R` to build and run
 
 ## 📱 UI Features
 
@@ -123,14 +96,6 @@ friendships/
 - Real-time time stamps (5m ago, 2h ago, Yesterday)
 - Challenge progress with "X to go" indicators
 - Tap friends to filter activities by user
-
-## 🔄 Real-time Updates
-
-The app uses **Combine framework** with Firebase's `addSnapshotListener` to provide real-time updates:
-
-- Friend list updates automatically when data changes
-- Activity feed refreshes with new challenge progress
-- No manual refresh needed - everything updates live
 
 ## 📝 Key Implementation Details
 
@@ -151,7 +116,3 @@ The app uses **Combine framework** with Firebase's `addSnapshotListener` to prov
 - Loading states with progress indicators
 
 ---
-
-**Project Status**: ✅ Complete - Ready for review and testing
-
-**Last Updated**: December 2024
